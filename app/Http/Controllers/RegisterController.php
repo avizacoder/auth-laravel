@@ -11,8 +11,8 @@ class RegisterController extends Controller
 
     public function create()
     {
-        $dates['users'] = User::paginate(5);
-        return view('auth.register', $dates);
+        $users = User::paginate(10);
+        return view('auth.register', compact('users'));
     }
 
     public function store(Request $request) 

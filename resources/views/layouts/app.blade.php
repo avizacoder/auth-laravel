@@ -11,21 +11,21 @@
     {{-- https://www.youtube.com/watch?v=DqWXEiyp22E --}}
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-          <a class="navbar-brand" href="">Mailer S.A.</a>
+          <a class="navbar-brand" href="{{ '/' }}">Mailer S.A.</a>
           <ul class="nav justify-content-end">
-            @if (auth()->check())
+            @if (Auth::check())
               <li class="nav-item">
                 <a class="nav-link" href="">Welcome {{ auth()->user()->name }}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('auth.destroy') }}">Logout</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('auth.register') }}">Register</a>
+              </li>
             @else
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('auth.login') }}">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('auth.register') }}">Register</a>
               </li>
             @endif
           </ul>

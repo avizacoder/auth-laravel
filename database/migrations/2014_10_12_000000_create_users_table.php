@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('date_birt');
             $table->string('city_code');
 
-            $table->string('role');
+            $table->string('role')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

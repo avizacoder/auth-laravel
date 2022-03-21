@@ -53,12 +53,11 @@
                                     <td>{{ $user->date_birt }}</td>
                                     <td>{{ $user->city_code }}</td>
                                     <td>
-                                        <a href="{{ url('/register/'.$user->id.'/edit') }}">Edit</a>
-                                        | 
-                                        <form action="{{ url('/register/'.$user->id) }}" method="post" >
+                                        <a class="btn btn-warning" href="{{ url('/register/'.$user->id.'/edit') }}">Edit</a>
+                                        <form action="{{ url('/register/'.$user->id) }}" method="post" class="d-inline" >
                                             @csrf
                                             {{ method_field('DELETE') }}
-                                            <input type="submit" value="Delete" onclick="return confirm('¿Quieres borrar?')">
+                                            <input class="btn btn-danger" type="submit" value="Delete" onclick="return confirm('¿Quieres borrar?')">
                                         </form>
                                     </td>
                                 </tr>
